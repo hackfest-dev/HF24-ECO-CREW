@@ -2,6 +2,7 @@ import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:path/path.dart';
+import 'package:sample/pages/display_picture.dart';
 
 class CameraWidget extends StatefulWidget {
   final List<CameraDescription> cameras;
@@ -92,7 +93,9 @@ class _CameraWidgetState extends State<CameraWidget>
                 child: IconButton(
                   icon: Icon(Icons.camera, size: 60),
                   color: Colors.white,
-                  onPressed: _takePicture,
+                  onPressed: () {
+                    _takePicture(context);
+                  },
                 ),
               ),
             ),
@@ -102,13 +105,18 @@ class _CameraWidgetState extends State<CameraWidget>
     );
   }
 
-  void _takePicture() async {
+  void _takePicture(context) async {
     if (!controller!.value.isInitialized) {
-      print('Error: select a camera first.');
       return;
     }
     final XFile file = await controller!.takePicture();
-    print('Picture saved to ${file.path}');
+    if (file.path.isNotEmpty) {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) =>
+                  DisplayPictureScreen(image: file, imagePath: file.path)));
+    }
   }
 
   @override

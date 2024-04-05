@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:sample/components/search_appbar.dart';
 import 'package:sample/components/camera_widget.dart';
 
+import '../components/feed.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -24,14 +26,20 @@ class _HomePageState extends State<HomePage> {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Search_Bar(), // Use the SearchBar widget here
+        title: const Search_Bar(),
       ),
-      body: const Center(
-        child: Text("Welcome to the Page!"),
-      ),
+      body: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 15),
+          child: ListView(
+            children: const [
+              Feed(),
+              Feed(),
+              Feed(),
+            ],
+          )),
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.camera_alt_outlined),
         onPressed: () {
