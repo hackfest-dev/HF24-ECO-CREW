@@ -14,7 +14,7 @@ class _SearchBarState extends State<Search_Bar>
   bool _isAvatarClicked = false;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(context) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10),
       decoration: BoxDecoration(
