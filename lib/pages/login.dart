@@ -7,8 +7,8 @@ class Login extends StatelessWidget {
   void handleLogin(context) {
     var r = 200;
     if (r == 200) {
-      Navigator.of(context)
-          .pushReplacement(MaterialPageRoute(builder: (context) => Home()));
+      Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (context) => const HomePage()));
     }
   }
 

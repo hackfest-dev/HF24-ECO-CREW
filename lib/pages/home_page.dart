@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:sample/appbars/search_appbar.dart';
 
-class Home extends StatefulWidget {
-  const Home({super.key});
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
 
-  @override
-  State<Home> createState() => _HomeState();
-}
-
-class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text("Hello World!"),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Search_Bar(), // Use the SearchBar widget here
+      ),
+      body: const Center(
+        child: Text("Welcome to the Page!"),
       ),
     );
   }
