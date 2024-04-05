@@ -34,9 +34,7 @@ class _SplashScreenState extends State<SplashScreen>
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 33, 170, 215),
       body: Center(
-        child: Container(
-          child: Image.asset('assets/logo/dice-2.png', width: 100),
-        ),
+        child: Image.asset('assets/logo/dice-2.png', width: 100),
       ),
     );
   }
