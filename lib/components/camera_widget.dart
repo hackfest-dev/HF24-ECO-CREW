@@ -25,7 +25,7 @@ class _CameraWidgetState extends State<CameraWidget>
     }
     controller = CameraController(
       cameraDescription,
-      ResolutionPreset.medium,
+      ResolutionPreset.low,
     );
 
     controller!.addListener(() {
